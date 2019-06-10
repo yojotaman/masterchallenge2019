@@ -1,164 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Mi cultivo inteligente</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="container">
-      <div class="logo">
-        <img src="robotex_latam_white.png" alt="" class="imagen" />
-      </div>
-      <div>
-        <h1 class="titulo">Master challenge 2019</h1>
-      </div>
-      <div class="content container row">
-        <div id="cuadrado" class="cuadrado col-lg-2 col-md-2 col-sm-6">
-          <p>S1</p>
-          <i id="uno" class="material-icons">
-            brightness_1
-          </i>
+        <div class="logo">
+            <img src="robotex_latam_white.png" alt="" class="imagen" />
+        </div>
+        <div>
+            <h1 class="titulo">Master challenge 2019</h1>
+        </div>
+        <div class="content container row">
+            <div id="cuadrado" class="cuadrado col-lg-2 col-md-2 col-sm-6">
+                <p>S1</p> <i id="uno" class="material-icons"> brightness_1 </i>
+            </div>
+
+            <div id="cuadrado" class="cuadrado col-lg-2 col-md-2 col-sm-6">
+                <p>S2</p> <i id="dos" class="material-icons"> brightness_1 </i>
+            </div>
+
+            <div id="cuadrado" class="cuadrado col-lg-2 col-md-2 col-sm-6">
+                <p>S3</p> <i id="tres" class="material-icons"> brightness_1 </i>
+            </div>
+
+            <div id="cuadrado" class="cuadrado col-lg-2 col-md-2 col-sm-6">
+                <p>S4</p> <i id="cuatro" class="material-icons"> brightness_1 </i>
+            </div>
+
+            <div id="cuadrado" class="cuadrado col-lg-2 col-md-2 col-sm-6">
+                <p>S5</p> <i id="cinco" class="material-icons"> brightness_1 </i>
+            </div>
+
+            <div id="cuadrado" class="cuadrado col-lg-2 col-md-2 col-sm-6">
+                <p>S6</p> <i id="seis" class="material-icons"> brightness_1 </i>
+            </div>
         </div>
 
-        <div id="cuadrado" class="cuadrado col-lg-2 col-md-2 col-sm-6">
-          <p>S2</p>
-          <i id="dos" class="material-icons">
-            brightness_1
-          </i>
+        <div class="row botones">
+            <br />
+            <br />
+            <div class="col text-center">
+                <button class="btn btn-primary text-center boton" onclick="generar()"> Generar </button>
+                <button class="btn btn-danger text-center boton" onclick="reset()"> Limpiar </button>
+            </div>
         </div>
+        <hr />
 
-        <div id="cuadrado" class="cuadrado col-lg-2 col-md-2 col-sm-6">
-          <p>S3</p>
-          <i id="tres" class="material-icons">
-            brightness_1
-          </i>
+        <div>
+            <img src="LogosNew.png" alt="" class="banner" />
         </div>
-
-        <div id="cuadrado" class="cuadrado col-lg-2 col-md-2 col-sm-6">
-          <p>S4</p>
-          <i id="cuatro" class="material-icons">
-            brightness_1
-          </i>
-        </div>
-
-        <div id="cuadrado" class="cuadrado col-lg-2 col-md-2 col-sm-6">
-          <p>S5</p>
-          <i id="cinco" class="material-icons">
-            brightness_1
-          </i>
-        </div>
-
-        <div id="cuadrado" class="cuadrado col-lg-2 col-md-2 col-sm-6">
-          <p>S6</p>
-          <i id="seis" class="material-icons">
-            brightness_1
-          </i>
-        </div>
-      </div>
-
-      <div class="row botones">
-        <br />
-        <br />
-        <div class="col text-center">
-          <button
-            class="btn btn-primary text-center generar"
-            onclick="generar()"
-          >
-            Generar
-          </button>
-          <button class="btn btn-danger text-center generar" onclick="reset()">
-            Reset
-          </button>
-        </div>
-      </div>
-      <hr />
-
-      <div>
-        <img src="LogosNew.png" alt="" class="banner" />
-      </div>
     </div>
     <!-- <div class="container" style="margin-top: 30px; margin-bottom: 30px"></div> -->
 
     <script>
-      var clic = 1;
-      function generar() {
-        if (clic === 1) {
-          var color_red = "clear";
-          var malo = "X";
-          var circulos = ["uno", "dos", "tres", "cuatro", "cinco", "seis"];
-          var rand = circulos[Math.floor(Math.random() * circulos.length)];
-          var rand2 = circulos[Math.floor(Math.random() * circulos.length)];
-          var circulo1 = document.getElementById(rand);
-          var circulo2 = document.getElementById(rand2);
+        var click = 0;
 
-          circulo1.innerText = color_red;
-          circulo2.innerText = color_red;
+        function generar() {
 
-          if (rand === rand2) {
-            var rand2 = circulos[Math.floor(Math.random() * circulos.length)];
-            var circulo2 = (document.getElementById(
-              rand2
-            ).innerText = color_red);
-          }
-          clic = clic + 1;
+            if (click === 0) {
+                var bad_plants = "clear";
+                var plants = ["uno", "dos", "tres", "cuatro", "cinco", "seis"];
+                var rand = plants[Math.floor(Math.random() * plants.length)];
+                var rand2 = plants[Math.floor(Math.random() * plants.length)];
 
-          if (clic >= 1) {
-            console.log("nada");
-          }
-        } else {
-          var color_red = "clear";
-          var malo = "X";
-          var circulos = ["uno", "dos", "tres", "cuatro", "cinco", "seis"];
-          var rand = circulos[Math.floor(Math.random() * circulos.length)];
-          var rand2 = circulos[Math.floor(Math.random() * circulos.length)];
-          var circulo1 = document.getElementById(rand);
-          var circulo2 = document.getElementById(rand2);
+                while (rand === rand2) {
+                    var rand2 = plants[Math.floor(Math.random() * plants.length)];
+                }
 
-          var num1 = rand;
-          var num2 = rand2;
-          circulo1.innerText = color_red;
-          circulo2.innerText = color_red;
+                var circulo1 = document.getElementById(rand);
+                var circulo2 = document.getElementById(rand2);
 
-          console.log("Circulo1: ", rand);
-          console.log("Circulo2: ", rand2);
+                circulo1.innerText = bad_plants;
+                circulo2.innerText = bad_plants;
+            }
 
-          if (rand === rand2) {
-            var rand2 = circulos[Math.floor(Math.random() * circulos.length)];
-            var circulo2 = (document.getElementById(
-              rand2
-            ).innerText = color_red);
-          }
+            click = 1;
         }
-      }
 
-      function reset() {
-        var color_green = "brightness_1";
-        var circles = (document.getElementById("uno").innerText = color_green);
-        var circles = (document.getElementById("dos").innerText = color_green);
-        var circles = (document.getElementById("tres").innerText = color_green);
-        var circles = (document.getElementById(
-          "cuatro"
-        ).innerText = color_green);
-        var circles = (document.getElementById(
-          "cinco"
-        ).innerText = color_green);
-        var circles = (document.getElementById("seis").innerText = color_green);
-      }
+        function reset() {
+            var good_plants = "brightness_1";
+            var circles = (document.getElementById("uno").innerText = good_plants);
+            var circles = (document.getElementById("dos").innerText = good_plants);
+            var circles = (document.getElementById("tres").innerText = good_plants);
+            var circles = (document.getElementById("cuatro").innerText = good_plants);
+            var circles = (document.getElementById("cinco").innerText = good_plants);
+            var circles = (document.getElementById("seis").innerText = good_plants);
+
+            click = 0;
+        }
     </script>
-  </body>
+</body>
+
 </html>

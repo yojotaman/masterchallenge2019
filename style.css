@@ -4,6 +4,7 @@
     height: 100%;
 }
 
+
 .logo {
     padding-top: 20px;
 
@@ -30,9 +31,13 @@
     padding-top: 50px;
 }
 
+.boton {
+    font-size: 25px;
+}
+
 .botones {
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 40px;
 }
 
 .titulo {
@@ -45,9 +50,14 @@
 
 .cuadrado {
     border: 1px solid #000;
-    height: 150px;
+    height: 180px;
     margin-top: 1%;
     width: 100%;
+}
+
+.cuadrado p {
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .material-icons {
